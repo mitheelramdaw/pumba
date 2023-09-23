@@ -1,0 +1,22 @@
+---
+import Cards from "../components/cards.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Astro</title>
+  </head>
+  <body class="bg-orange-600 overflow-hidden">
+    <h1
+      class="font-bold underline animate-bounce text-gray-200 text-center pt-8"
+    >
+      Ryans Resturantę
+    </h1>
+
+    <Cards />
+    <slot />
+  </body>
+</html>

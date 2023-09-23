@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Recipe Cards</title>
+    <!-- Include Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Hide scroll bars and define smooth scrolling behavior */
+      .scrollbar-hide::-webkit-scrollbar {
+        width: 10px; /* Width of the scroll bar */
+      }
+
+      .scrollbar-hide::-webkit-scrollbar-track {
+        background: transparent; /* Track color */
+      }
+
+      .scrollbar-hide::-webkit-scrollbar-thumb {
+        background: transparent; /* Transparent scroll thumb */
+      }
+
+      .scrollbar-hide::-webkit-scrollbar-thumb:hover {
+        background: transparent; /* Transparent scroll thumb on hover */
+      }
+
+      /* Define smooth scrolling behavior */
+      .scrollbar-hide {
+        scrollbar-width: thin;
+        scrollbar-color: transparent #f1f1f1;
+        overflow-y: scroll; /* Enable vertical scrolling */
+      }
+
+      /* Curvy Ingredients Heading */
+      .curvy-heading {
+        font-family: "Pacifico", cursive;
+        font-size: 1.5rem;
+        text-decoration: underline;
+        text-underline-offset: 0.2rem;
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+        background-color: #ffd700;
+        color: #333;
+      }
+
+      /* Informal Content */
+      .informal-content {
+        font-family: "Comic Sans MS", cursive;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-orange-500">
+    <div class="min-h-screen flex items-center justify-center bg-orange-600">
+      <div class="flex space-x-8">
+        <!-- Single Card Container -->
+        <div
+          class="bg-yellow-500 text-black shadow-lg rounded-lg p-6 max-w-lg m-4"
+        >
+          <!-- Recipe Name and Toggle Button -->
+          <div class="flex justify-between items-center mb-2">
+            <h2 class="text-3xl font-serif mr-4">Delicious Pancakes</h2>
+            <button
+              class="rounded-full bg-blue-500 text-black px-4 py-1"
+              id="toggle-button"
+            >
+              Toggle
+            </button>
+          </div>
+          <!-- Separator -->
+          <hr class="my-2 border-t-2 border-black" />
+
+          <!-- Image -->
+          <img
+            src="/public/ryan.jpeg"
+            alt="Pancakes"
+            class="w-full h-48 object-cover mb-2 rounded"
+          />
+
+          <!-- Ingredients Section -->
+          <div class="mb-2" id="ingredients-section">
+            <h3 class="curvy-heading">Ingredients</h3>
+            <ul class="list-disc pl-4 informal-content">
+              <li>1 cup all-purpose flour</li>
+              <li>2 tbsp sugar</li>
+              <li>1 tsp baking powder</li>
+              <li>1/2 tsp salt</li>
+              <li>1 cup milk</li>
+              <li>1 egg</li>
+            </ul>
+          </div>
+
+          <!-- Instructions Section (Initially Hidden) -->
+          <div class="mb-2 hidden" id="instructions-section">
+            <h3 class="curvy-heading">Instructions</h3>
+            <ol class="list-decimal pl-4 informal-content">
+              <li>Step 1: Mix dry ingredients in a bowl.</li>
+              <li>Step 2: Add milk and egg, whisk until smooth.</li>
+              <li>Step 3: Heat a griddle and pour batter to make pancakes.</li>
+              <li>Step 4: Cook until golden brown on both sides.</li>
+              <li>Step 5: Serve with your favorite toppings.</li>
+            </ol>
+          </div>
+
+          <!-- Footer Buttons -->
+          <div class="flex justify-between space-x-4">
+            <button class="rounded-full bg-blue-500 text-black px-4 py-1">
+              Country
+            </button>
+            <button class="rounded-full bg-blue-500 text-black px-4 py-1">
+              X min
+            </button>
+            <button class="rounded-full bg-blue-500 text-black px-4 py-1">
+              Price
+            </button>
+          </div>
+        </div>
+
+        <!-- Add more recipe cards here -->
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggle-button");
+        const ingredientsSection = document.getElementById(
+          "ingredients-section"
+        );
+        const instructionsSection = document.getElementById(
+          "instructions-section"
+        );
+
+        toggleButton.addEventListener("click", function () {
+          ingredientsSection.classList.toggle("hidden");
+          instructionsSection.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
